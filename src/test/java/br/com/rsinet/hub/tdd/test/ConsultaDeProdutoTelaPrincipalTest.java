@@ -6,33 +6,43 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import br.com.rsinet.hub.tdd.pages.HomePage;
+import br.com.rsinet.hub.tdd.pages.InfoFormPage;
 import br.com.rsinet.hub.tdd.suport.Web;
+import br.com.rsinet.hub.tdd.utility.Constant;
+import br.com.rsinet.hub.tdd.utility.ExcelUtils;
 
 public class ConsultaDeProdutoTelaPrincipalTest {
 
 	WebDriver driver = null;
 
 	@Before
-	public void iniciaNavegador() {
+	public void iniciaNavegador() throws Exception {
 		driver = Web.createChrome();
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Planilha1");
 	}
 
 	@Test
-	public void teste() throws Exception {
-
-		driver.get("http://advantageonlineshopping.com");
-
-		Thread.sleep(10000);
-		driver.findElement(By.xpath("//*[@id=\"laptopsImg\"]")).click();
-
-		driver.findElement(By.xpath("/html/body/div[3]/section/article/div[3]/div/div/div[2]/ul/li[1]")).click();
-
+	public void pesquisaProdutoTelaPrincipal() throws Exception {
+		String categoria = ExcelUtils.getCellData(1, 14);	
+		String produto = ExcelUtils.getCellData(1, 15);	
+		
+		HomePage.pesquisaCategoriaTelaPrincipal(driver, categoria).click();
+		HomePage.pesquisaProdutoTela(driver, produto).click();
 	}
 	
+	@Test
+	public void pesquisaProdutoInexistenteTelaPrincipal() throws Exception {
+		String categoria = ExcelUtils.getCellData(1, 14);	
+		String produto = ExcelUtils.getCellData(1, 99);	
+		
+		HomePage.pesquisaCategoriaTelaPrincipal(driver, categoria).click();
+		HomePage.pesquisaProdutoTela(driver, produto).click();
+	}
+
 	@After
 	public void killDriver() {
-		
+		driver.quit();
 	}
-	
 
 }
