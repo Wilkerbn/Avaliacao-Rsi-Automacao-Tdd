@@ -42,16 +42,38 @@ public class HomePage {
 		return elemento;
 	}
 	
-	public static String produtoObtido(WebDriver driver) {
+	public static String produtoLupaValidoObtido(WebDriver driver) {
 		WebElement elemento = driver.findElement(By.xpath("//*[@id=\"Description\"]/h1"));
 		String produtoObtido = elemento.getText();
 		return produtoObtido;
 	}
 	
-	public static String produtoInvalidoObtido(WebDriver driver) {
+	public static String produtoLupaInvalidoObtido(WebDriver driver) {
 		WebElement elemento = driver.findElement(By.xpath("//*[@id=\"searchPage\"]/div[3]/div/label/span"));
 		String produtoInvalidoObtido = elemento.getText();
 		return produtoInvalidoObtido;
+	}
+	
+	public static String produtoTelaPrincipalValidoObtido(WebDriver driver) {
+		WebElement elemento = driver.findElement(By.xpath("//*[. ='HP PAVILION 15Z LAPTOP']"));
+		String produtoValido = elemento.getText();
+		return produtoValido;
+	}
+	
+	public static WebElement digitaQuantidadeDeProdutos(WebDriver driver) {
+		elemento = driver.findElement(By.name("quantity"));
+		return elemento;
+	}
+	
+	public static WebElement inserirProdutosCarrinho(WebDriver driver) {
+		elemento = driver.findElement(By.name("save_to_cart"));
+		return elemento;
+	}
+	
+	public static String valorInvalidoDeProdutos(WebDriver driver) {
+		elemento = driver.findElement(By.xpath("//*[@id=\"productProperties\"]/label"));
+		String quantidadeInvalidaProduto = elemento.getText();
+		return quantidadeInvalidaProduto;
 	}
 
 }

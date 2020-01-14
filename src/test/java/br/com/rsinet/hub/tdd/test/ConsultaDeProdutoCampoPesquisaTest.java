@@ -9,6 +9,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.hub.tdd.pages.HomePage;
+import br.com.rsinet.hub.tdd.suport.Generator;
+import br.com.rsinet.hub.tdd.suport.Screenshot;
 import br.com.rsinet.hub.tdd.suport.Web;
 import br.com.rsinet.hub.tdd.utility.Constant;
 import br.com.rsinet.hub.tdd.utility.ExcelUtils;
@@ -31,7 +33,8 @@ public class ConsultaDeProdutoCampoPesquisaTest {
 		HomePage.pesquisaProdutoLupa(driver).sendKeys(ExcelUtils.getCellData(1, 12));
 		HomePage.selecionaProdutoLupa(driver, produtoEsperado).click();
 
-		Assert.assertEquals(produtoEsperado, HomePage.produtoObtido(driver));
+		Assert.assertEquals(produtoEsperado, HomePage.produtoLupaValidoObtido(driver));
+		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoValidoCampoPesquisa.png");
 	}
 
 	@Test
@@ -41,7 +44,8 @@ public class ConsultaDeProdutoCampoPesquisaTest {
 		HomePage.clicaLupaParaPesquisarProduto(driver).click();
 		HomePage.pesquisaProdutoLupa(driver).sendKeys(ExcelUtils.getCellData(1, 16) + Keys.ENTER);
 		
-		Assert.assertEquals(produtoEsperado, HomePage.produtoInvalidoObtido(driver));
+		Assert.assertEquals(produtoEsperado, HomePage.produtoLupaInvalidoObtido(driver));
+		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoInvalidoCampoPesquisa.png");
 	}
 
 	@After

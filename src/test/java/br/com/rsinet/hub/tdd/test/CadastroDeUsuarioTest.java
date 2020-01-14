@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.hub.tdd.pages.InfoFormPage;
 import br.com.rsinet.hub.tdd.pages.LoginPage;
+import br.com.rsinet.hub.tdd.suport.Generator;
+import br.com.rsinet.hub.tdd.suport.Screenshot;
 import br.com.rsinet.hub.tdd.suport.Web;
 import br.com.rsinet.hub.tdd.utility.Constant;
 import br.com.rsinet.hub.tdd.utility.ExcelUtils;
@@ -19,14 +21,13 @@ public class CadastroDeUsuarioTest {
 	WebDriver driver = null;
 
 	@Before
-	public void iniciaNavegador() {
+	public void iniciaNavegador() throws Exception {
 		driver = Web.createChrome();
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
 	}
 
 	@Test
-	public void cadastro() throws Exception {
-				
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Planilha1");
+	public void cadastroValido() throws Exception {
 		
 		LoginPage.botaoUsuario(driver).click();
 		LoginPage.criarNovaConta(driver).sendKeys(Keys.ENTER);
@@ -44,13 +45,13 @@ public class CadastroDeUsuarioTest {
 		InfoFormPage.campoCep(driver).sendKeys(ExcelUtils.getCellData(1, 11));
 		InfoFormPage.campoAceitaTermos(driver).click();
 		InfoFormPage.botaoRegistra(driver).click();
+		
 		assertEquals(ExcelUtils.getCellData(1, 0), InfoFormPage.capturaTexto(driver));
+		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " cadastroValido.png");
 	}
 
 	@Test
 	public void cadastroDuplicado() throws Exception {
-
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
 
 		LoginPage.botaoUsuario(driver).click();
 		LoginPage.criarNovaConta(driver).sendKeys(Keys.ENTER);
@@ -68,13 +69,19 @@ public class CadastroDeUsuarioTest {
 		InfoFormPage.campoCep(driver).sendKeys(ExcelUtils.getCellData(1, 11));
 		InfoFormPage.campoAceitaTermos(driver).click();
 		InfoFormPage.botaoRegistra(driver).click();
-		assertEquals(ExcelUtils.getCellData(1, 0), InfoFormPage.capturaTexto(driver));
+		
+		assertEquals(ExcelUtils.getCellData(1, 18), InfoFormPage.capturaTextoCadastroDuplicado(driver));
+		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " cadastroDuplicado.png");
 
 	}
 
+
+		
+	
+	
 	@After
 	public void killDriver() {
-		driver.quit();
+		//driver.quit();
 	}
 
 }

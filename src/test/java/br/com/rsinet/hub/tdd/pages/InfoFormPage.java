@@ -94,6 +94,17 @@ public class InfoFormPage {
 		String textoUsuarioLogado = textoCapturado.getText();
 		return textoUsuarioLogado;
 	}
+	
+	public static String capturaTextoCadastroDuplicado(WebDriver driver) throws Exception {
+		Thread.sleep(500);
+		WebElement textoCapturado = driver.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]"));
+		String mensagemCadastroDuplicado = textoCapturado.getText();
+		return mensagemCadastroDuplicado;
+	}
+	
+	
+	
+	
 }
 
 
