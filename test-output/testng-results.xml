@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26908" started-at="2020-01-14T16:34:08 BRT" finished-at="2020-01-14T16:34:35 BRT">
+  <suite name="Default suite" duration-ms="26152" started-at="2020-01-15T17:06:46 BRT" finished-at="2020-01-15T17:07:13 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26908" started-at="2020-01-14T16:34:08 BRT" finished-at="2020-01-14T16:34:35 BRT">
+    <test name="Default test" duration-ms="26152" started-at="2020-01-15T17:06:46 BRT" finished-at="2020-01-15T17:07:13 BRT">
       <class name="br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest">
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="iniciaNavegador" is-config="true" duration-ms="12244" started-at="2020-01-14T16:34:08 BRT" finished-at="2020-01-14T16:34:20 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="iniciaNavegador" is-config="true" duration-ms="11187" started-at="2020-01-15T17:06:47 BRT" finished-at="2020-01-15T17:06:58 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="pesquisaProdutoQuantidadeInvalidaTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="pesquisaProdutoQuantidadeInvalidaTelaPrincipal" duration-ms="1733" started-at="2020-01-14T16:34:20 BRT" finished-at="2020-01-14T16:34:22 BRT">
+        <test-method status="PASS" signature="pesquisaProdutoQuantidadeInvalidaTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="pesquisaProdutoQuantidadeInvalidaTelaPrincipal" duration-ms="1675" started-at="2020-01-15T17:06:58 BRT" finished-at="2020-01-15T17:06:59 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pesquisaProdutoQuantidadeInvalidaTelaPrincipal -->
-        <test-method status="PASS" signature="killDriver()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="killDriver" is-config="true" duration-ms="646" started-at="2020-01-14T16:34:22 BRT" finished-at="2020-01-14T16:34:23 BRT">
+        <test-method status="PASS" signature="killDriver()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="killDriver" is-config="true" duration-ms="632" started-at="2020-01-15T17:06:59 BRT" finished-at="2020-01-15T17:07:00 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killDriver -->
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="iniciaNavegador" is-config="true" duration-ms="10252" started-at="2020-01-14T16:34:23 BRT" finished-at="2020-01-14T16:34:33 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="iniciaNavegador" is-config="true" duration-ms="9974" started-at="2020-01-15T17:07:00 BRT" finished-at="2020-01-15T17:07:10 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="pesquisaProdutoValidoTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="pesquisaProdutoValidoTelaPrincipal" duration-ms="1385" started-at="2020-01-14T16:34:33 BRT" finished-at="2020-01-14T16:34:34 BRT">
+        <test-method status="PASS" signature="pesquisaProdutoValidoTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="pesquisaProdutoValidoTelaPrincipal" duration-ms="2053" started-at="2020-01-15T17:07:10 BRT" finished-at="2020-01-15T17:07:12 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pesquisaProdutoValidoTelaPrincipal -->
-        <test-method status="PASS" signature="killDriver()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="killDriver" is-config="true" duration-ms="614" started-at="2020-01-14T16:34:34 BRT" finished-at="2020-01-14T16:34:35 BRT">
+        <test-method status="PASS" signature="killDriver()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="killDriver" is-config="true" duration-ms="602" started-at="2020-01-15T17:07:12 BRT" finished-at="2020-01-15T17:07:13 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killDriver -->

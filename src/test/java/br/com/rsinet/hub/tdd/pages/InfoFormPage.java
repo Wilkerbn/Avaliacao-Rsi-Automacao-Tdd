@@ -1,6 +1,7 @@
 package br.com.rsinet.hub.tdd.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -84,19 +85,20 @@ public class InfoFormPage {
 
 	public static WebElement botaoRegistra(WebDriver driver)  {
 		elemento = driver.findElement(By.id("register_btnundefined"));
-		
 		return elemento;
 	}
 	
 	public static String capturaTexto(WebDriver driver) throws Exception {
-		Thread.sleep(500);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+	    jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1000);");
 		WebElement textoCapturado = driver.findElement(By.xpath("//*[@id=\"menuUserLink\"]/span"));
 		String textoUsuarioLogado = textoCapturado.getText();
 		return textoUsuarioLogado;
 	}
 	
 	public static String capturaTextoCadastroDuplicado(WebDriver driver) throws Exception {
-		Thread.sleep(500);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+	    jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1000);");
 		WebElement textoCapturado = driver.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]"));
 		String mensagemCadastroDuplicado = textoCapturado.getText();
 		return mensagemCadastroDuplicado;

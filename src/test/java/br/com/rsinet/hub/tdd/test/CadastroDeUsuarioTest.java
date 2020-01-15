@@ -1,10 +1,10 @@
 package br.com.rsinet.hub.tdd.test;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.testng.AssertJUnit.assertEquals;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -20,33 +20,33 @@ public class CadastroDeUsuarioTest {
 
 	WebDriver driver = null;
 
-	@Before
+	@BeforeMethod
 	public void iniciaNavegador() throws Exception {
 		driver = Web.createChrome();
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Cadastro");
 	}
 
-	@Test
-	public void cadastroValido() throws Exception {
+	@Test 
+	public void cadastro() throws Exception {
 		
 		LoginPage.botaoUsuario(driver).click();
 		LoginPage.criarNovaConta(driver).sendKeys(Keys.ENTER);
-		InfoFormPage.campoApelido(driver).sendKeys(ExcelUtils.getCellData(1, 0));
-		InfoFormPage.campoSenha(driver).sendKeys(ExcelUtils.getCellData(1, 1));
-		InfoFormPage.campoConfirmaSenha(driver).sendKeys(ExcelUtils.getCellData(1, 2));
-		InfoFormPage.campoEmail(driver).sendKeys(ExcelUtils.getCellData(1, 3));
-		InfoFormPage.campoPrimeiroNome(driver).sendKeys(ExcelUtils.getCellData(1, 4));
-		InfoFormPage.campoUltimoNome(driver).sendKeys(ExcelUtils.getCellData(1, 5));
-		InfoFormPage.campoTelefone(driver).sendKeys(ExcelUtils.getCellData(1, 6));
-		InfoFormPage.campoPais(driver).selectByVisibleText(ExcelUtils.getCellData(1, 7));
-		InfoFormPage.campoCidade(driver).sendKeys(ExcelUtils.getCellData(1, 8));
-		InfoFormPage.campoEndereco(driver).sendKeys(ExcelUtils.getCellData(1, 9));
-		InfoFormPage.campoEstado(driver).sendKeys(ExcelUtils.getCellData(1, 10));
-		InfoFormPage.campoCep(driver).sendKeys(ExcelUtils.getCellData(1, 11));
+		InfoFormPage.campoApelido(driver).sendKeys(ExcelUtils.getCellData(1, 1));
+		InfoFormPage.campoSenha(driver).sendKeys(ExcelUtils.getCellData(2, 1));
+		InfoFormPage.campoConfirmaSenha(driver).sendKeys(ExcelUtils.getCellData(3, 1));
+		InfoFormPage.campoEmail(driver).sendKeys(ExcelUtils.getCellData(4, 1));
+		InfoFormPage.campoPrimeiroNome(driver).sendKeys(ExcelUtils.getCellData(5, 1));
+		InfoFormPage.campoUltimoNome(driver).sendKeys(ExcelUtils.getCellData(6, 1));
+		InfoFormPage.campoTelefone(driver).sendKeys(ExcelUtils.getCellData(7, 1));
+		InfoFormPage.campoPais(driver).selectByVisibleText(ExcelUtils.getCellData(8, 1));
+		InfoFormPage.campoCidade(driver).sendKeys(ExcelUtils.getCellData(9, 1));
+		InfoFormPage.campoEndereco(driver).sendKeys(ExcelUtils.getCellData(10, 1));
+		InfoFormPage.campoEstado(driver).sendKeys(ExcelUtils.getCellData(11, 1));
+		InfoFormPage.campoCep(driver).sendKeys(ExcelUtils.getCellData(12, 1));
 		InfoFormPage.campoAceitaTermos(driver).click();
 		InfoFormPage.botaoRegistra(driver).click();
 		
-		assertEquals(ExcelUtils.getCellData(1, 0), InfoFormPage.capturaTexto(driver));
+		assertEquals(ExcelUtils.getCellData(1, 1), InfoFormPage.capturaTexto(driver));
 		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " cadastroValido.png");
 	}
 
@@ -55,22 +55,24 @@ public class CadastroDeUsuarioTest {
 
 		LoginPage.botaoUsuario(driver).click();
 		LoginPage.criarNovaConta(driver).sendKeys(Keys.ENTER);
-		InfoFormPage.campoApelido(driver).sendKeys(ExcelUtils.getCellData(1, 0));
-		InfoFormPage.campoSenha(driver).sendKeys(ExcelUtils.getCellData(1, 1));
-		InfoFormPage.campoConfirmaSenha(driver).sendKeys(ExcelUtils.getCellData(1, 2));
-		InfoFormPage.campoEmail(driver).sendKeys(ExcelUtils.getCellData(1, 3));
-		InfoFormPage.campoPrimeiroNome(driver).sendKeys(ExcelUtils.getCellData(1, 4));
-		InfoFormPage.campoUltimoNome(driver).sendKeys(ExcelUtils.getCellData(1, 5));
-		InfoFormPage.campoTelefone(driver).sendKeys(ExcelUtils.getCellData(1, 6));
-		InfoFormPage.campoPais(driver).selectByVisibleText(ExcelUtils.getCellData(1, 7));
-		InfoFormPage.campoCidade(driver).sendKeys(ExcelUtils.getCellData(1, 8));
-		InfoFormPage.campoEndereco(driver).sendKeys(ExcelUtils.getCellData(1, 9));
-		InfoFormPage.campoEstado(driver).sendKeys(ExcelUtils.getCellData(1, 10));
-		InfoFormPage.campoCep(driver).sendKeys(ExcelUtils.getCellData(1, 11));
+		InfoFormPage.campoApelido(driver).sendKeys(ExcelUtils.getCellData(1, 1));
+		InfoFormPage.campoSenha(driver).sendKeys(ExcelUtils.getCellData(2, 1));
+		InfoFormPage.campoConfirmaSenha(driver).sendKeys(ExcelUtils.getCellData(3, 1));
+		InfoFormPage.campoEmail(driver).sendKeys(ExcelUtils.getCellData(4, 1));
+		InfoFormPage.campoPrimeiroNome(driver).sendKeys(ExcelUtils.getCellData(5, 1));
+		InfoFormPage.campoUltimoNome(driver).sendKeys(ExcelUtils.getCellData(6, 1));
+		InfoFormPage.campoTelefone(driver).sendKeys(ExcelUtils.getCellData(7, 1));
+		InfoFormPage.campoPais(driver).selectByVisibleText(ExcelUtils.getCellData(8, 1));
+		InfoFormPage.campoCidade(driver).sendKeys(ExcelUtils.getCellData(9, 1));
+		InfoFormPage.campoEndereco(driver).sendKeys(ExcelUtils.getCellData(10, 1));
+		InfoFormPage.campoEstado(driver).sendKeys(ExcelUtils.getCellData(11, 1));
+		InfoFormPage.campoCep(driver).sendKeys(ExcelUtils.getCellData(12, 1));
 		InfoFormPage.campoAceitaTermos(driver).click();
 		InfoFormPage.botaoRegistra(driver).click();
 		
-		assertEquals(ExcelUtils.getCellData(1, 18), InfoFormPage.capturaTextoCadastroDuplicado(driver));
+		assertEquals(ExcelUtils.getCellData(13,1), InfoFormPage.capturaTextoCadastroDuplicado(driver));
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("scrollBy(0,100)", "");
 		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " cadastroDuplicado.png");
 
 	}
@@ -79,9 +81,9 @@ public class CadastroDeUsuarioTest {
 		
 	
 	
-	@After
+	@AfterMethod
 	public void killDriver() {
-		//driver.quit();
+		driver.quit();
 	}
 
 }

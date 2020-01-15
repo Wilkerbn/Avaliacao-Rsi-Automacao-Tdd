@@ -1,12 +1,14 @@
 package br.com.rsinet.hub.tdd.test;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import br.com.rsinet.hub.tdd.pages.HomePage;
 import br.com.rsinet.hub.tdd.suport.Generator;
@@ -19,38 +21,34 @@ public class ConsultaDeProdutoCampoPesquisaTest {
 
 	WebDriver driver = null;
 
-	@Before
+	@BeforeMethod
 	public void iniciaNavegador() throws Exception {
 		driver = Web.createChrome();
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Produtos");
 	}
 
 	@Test
 	public void pesquisaProdutoValidoCampoPesquisa() throws Exception {
-		String produtoEsperado = ExcelUtils.getCellData(1, 13);
 
 		HomePage.clicaLupaParaPesquisarProduto(driver).click();
-		HomePage.pesquisaProdutoLupa(driver).sendKeys(ExcelUtils.getCellData(1, 12));
-		HomePage.selecionaProdutoLupa(driver, produtoEsperado).click();
-
-		Assert.assertEquals(produtoEsperado, HomePage.produtoLupaValidoObtido(driver));
+		HomePage.pesquisaProdutoLupa(driver).sendKeys(ExcelUtils.getCellData(3, 1));
+		HomePage.selecionaProdutoLupa(driver, ExcelUtils.getCellData(3, 2)).click();
+		Assert.assertEquals(ExcelUtils.getCellData(3, 2), HomePage.produtoLupaValidoObtido(driver));
 		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoValidoCampoPesquisa.png");
 	}
 
 	@Test
 	public void pesquisaProdutoInvalidoCampoPesquisa() throws Exception {
-		String produtoEsperado = ExcelUtils.getCellData(1, 17); 
 
 		HomePage.clicaLupaParaPesquisarProduto(driver).click();
-		HomePage.pesquisaProdutoLupa(driver).sendKeys(ExcelUtils.getCellData(1, 16) + Keys.ENTER);
-		
-		Assert.assertEquals(produtoEsperado, HomePage.produtoLupaInvalidoObtido(driver));
+		HomePage.pesquisaProdutoLupa(driver).sendKeys(ExcelUtils.getCellData(11, 0) + Keys.ENTER);
+		Assert.assertEquals(ExcelUtils.getCellData(11, 1), HomePage.produtoLupaInvalidoObtido(driver));
 		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoInvalidoCampoPesquisa.png");
 	}
 
-	@After
+	@AfterMethod
 	public void killDriver() {
-		// driver.quit();
+		driver.quit();
 	}
 
 }

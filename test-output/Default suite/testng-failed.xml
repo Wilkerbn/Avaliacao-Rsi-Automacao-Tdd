@@ -5,9 +5,9 @@
     <classes>
       <class name="br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest">
         <methods>
-          <include name="pesquisaProdutoValidoTelaPrincipal"/>
           <include name="killDriver"/>
           <include name="iniciaNavegador"/>
+          <include name="pesquisaProdutoQuantidadeInvalidaTelaPrincipal"/>
         </methods>
       </class> <!-- br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest -->
     </classes>

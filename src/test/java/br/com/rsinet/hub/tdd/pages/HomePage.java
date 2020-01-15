@@ -1,12 +1,9 @@
 package br.com.rsinet.hub.tdd.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import br.com.rsinet.hub.tdd.utility.Constant;
-import br.com.rsinet.hub.tdd.utility.ExcelUtils;
 
 public class HomePage {
 
@@ -33,6 +30,8 @@ public class HomePage {
 	}
 
 	public static WebElement pesquisaProdutoLupa(WebDriver driver) {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+	    jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500);");
 		elemento = driver.findElement(By.id("autoComplete"));
 		return elemento;
 	}
@@ -49,14 +48,16 @@ public class HomePage {
 	}
 	
 	public static String produtoLupaInvalidoObtido(WebDriver driver) {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+	    jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
 		WebElement elemento = driver.findElement(By.xpath("//*[@id=\"searchPage\"]/div[3]/div/label/span"));
 		String produtoInvalidoObtido = elemento.getText();
 		return produtoInvalidoObtido;
 	}
 	
-	public static String produtoTelaPrincipalValidoObtido(WebDriver driver) {
-		WebElement elemento = driver.findElement(By.xpath("//*[. ='HP PAVILION 15Z LAPTOP']"));
-		String produtoValido = elemento.getText();
+	public static String produtoTelaPrincipalValidoObtido(WebDriver driver, String produto) {
+		WebElement elemento = driver.findElement(By.xpath("//*[. ='" + produto + "']"));
+		String produtoValido = elemento.getText().toUpperCase();
 		return produtoValido;
 	}
 	

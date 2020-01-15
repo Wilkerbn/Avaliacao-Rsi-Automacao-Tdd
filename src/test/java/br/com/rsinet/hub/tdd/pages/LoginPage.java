@@ -20,7 +20,7 @@ public class LoginPage {
 
 	public static WebElement criarNovaConta(WebDriver driver) throws Exception {
 
-//		Thread.sleep(2000);
+
 		elemento = driver.findElement(By.linkText("CREATE NEW ACCOUNT"));
 		return elemento;
 
