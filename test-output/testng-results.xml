@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26152" started-at="2020-01-15T17:06:46 BRT" finished-at="2020-01-15T17:07:13 BRT">
+  <suite name="Default suite" duration-ms="16986" started-at="2020-01-21T15:39:56 BRT" finished-at="2020-01-21T15:40:13 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26152" started-at="2020-01-15T17:06:46 BRT" finished-at="2020-01-15T17:07:13 BRT">
-      <class name="br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest">
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="iniciaNavegador" is-config="true" duration-ms="11187" started-at="2020-01-15T17:06:47 BRT" finished-at="2020-01-15T17:06:58 BRT">
+    <test name="Default test" duration-ms="16986" started-at="2020-01-21T15:39:56 BRT" finished-at="2020-01-21T15:40:13 BRT">
+      <class name="br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@49fc609f]" name="iniciaNavegador" is-config="true" duration-ms="11212" started-at="2020-01-21T15:39:56 BRT" finished-at="2020-01-21T15:40:08 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="pesquisaProdutoQuantidadeInvalidaTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="pesquisaProdutoQuantidadeInvalidaTelaPrincipal" duration-ms="1675" started-at="2020-01-15T17:06:58 BRT" finished-at="2020-01-15T17:06:59 BRT">
+        <test-method status="PASS" signature="cadastro()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@49fc609f]" name="cadastro" duration-ms="5133" started-at="2020-01-21T15:40:08 BRT" finished-at="2020-01-21T15:40:13 BRT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- pesquisaProdutoQuantidadeInvalidaTelaPrincipal -->
-        <test-method status="PASS" signature="killDriver()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="killDriver" is-config="true" duration-ms="632" started-at="2020-01-15T17:06:59 BRT" finished-at="2020-01-15T17:07:00 BRT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- killDriver -->
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="iniciaNavegador" is-config="true" duration-ms="9974" started-at="2020-01-15T17:07:00 BRT" finished-at="2020-01-15T17:07:10 BRT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="pesquisaProdutoValidoTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="pesquisaProdutoValidoTelaPrincipal" duration-ms="2053" started-at="2020-01-15T17:07:10 BRT" finished-at="2020-01-15T17:07:12 BRT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- pesquisaProdutoValidoTelaPrincipal -->
-        <test-method status="PASS" signature="killDriver()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@3cef309d]" name="killDriver" is-config="true" duration-ms="602" started-at="2020-01-15T17:07:12 BRT" finished-at="2020-01-15T17:07:13 BRT">
+        </test-method> <!-- cadastro -->
+        <test-method status="PASS" signature="killDriver()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@49fc609f]" name="killDriver" is-config="true" duration-ms="613" started-at="2020-01-21T15:40:13 BRT" finished-at="2020-01-21T15:40:13 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killDriver -->
-      </class> <!-- br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest -->
+      </class> <!-- br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

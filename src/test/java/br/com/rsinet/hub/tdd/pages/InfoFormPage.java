@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class InfoFormPage {
+import br.com.rsinet.hub.tdd.suport.Wait;
+
+public class InfoFormPage extends Wait {
 
 	private WebDriver driver;
 	private static WebElement elemento = null;
@@ -14,6 +16,7 @@ public class InfoFormPage {
 	
 
 	public InfoFormPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 
@@ -84,28 +87,24 @@ public class InfoFormPage {
 	}
 
 	public static WebElement botaoRegistra(WebDriver driver)  {
+		usaScrollNaPagina(driver);
 		elemento = driver.findElement(By.id("register_btnundefined"));
 		return elemento;
 	}
 	
 	public static String capturaTexto(WebDriver driver) throws Exception {
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-	    jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1000);");
+		esperarCarregarPagina(driver);
 		WebElement textoCapturado = driver.findElement(By.xpath("//*[@id=\"menuUserLink\"]/span"));
 		String textoUsuarioLogado = textoCapturado.getText();
 		return textoUsuarioLogado;
 	}
 	
 	public static String capturaTextoCadastroDuplicado(WebDriver driver) throws Exception {
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-	    jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1000);");
+		esperarCarregarPagina(driver);
 		WebElement textoCapturado = driver.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]"));
 		String mensagemCadastroDuplicado = textoCapturado.getText();
 		return mensagemCadastroDuplicado;
 	}
-	
-	
-	
 	
 }
 

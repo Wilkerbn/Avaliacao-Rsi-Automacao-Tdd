@@ -5,12 +5,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePage {
+import br.com.rsinet.hub.tdd.suport.Wait;
+
+public class HomePage extends Wait {
 
 	private WebDriver driver;
 	private static WebElement elemento = null;
 
 	public HomePage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 
@@ -20,6 +23,7 @@ public class HomePage {
 	}
 
 	public static WebElement pesquisaProdutoTela(WebDriver driver, String produto) {
+		esperarCarregarPagina(driver);
 		elemento = driver.findElement(By.xpath("//*[. ='" + produto + "']"));
 		return elemento;
 	}
@@ -30,8 +34,7 @@ public class HomePage {
 	}
 
 	public static WebElement pesquisaProdutoLupa(WebDriver driver) {
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-	    jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1500);");
+		esperarCarregarPagina(driver);
 		elemento = driver.findElement(By.id("autoComplete"));
 		return elemento;
 	}
@@ -48,8 +51,7 @@ public class HomePage {
 	}
 	
 	public static String produtoLupaInvalidoObtido(WebDriver driver) {
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-	    jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
+		esperarCarregarPagina(driver);
 		WebElement elemento = driver.findElement(By.xpath("//*[@id=\"searchPage\"]/div[3]/div/label/span"));
 		String produtoInvalidoObtido = elemento.getText();
 		return produtoInvalidoObtido;
@@ -67,6 +69,7 @@ public class HomePage {
 	}
 	
 	public static WebElement inserirProdutosCarrinho(WebDriver driver) {
+		usaScrollNaPagina(driver);
 		elemento = driver.findElement(By.name("save_to_cart"));
 		return elemento;
 	}

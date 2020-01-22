@@ -26,27 +26,20 @@ public class ConsultaDeProdutoTelaPrincipalTest {
 
 	@Test
 	public void pesquisaProdutoValidoTelaPrincipal() throws Exception {
-				
 		HomePage.pesquisaCategoriaTelaPrincipal(driver, ExcelUtils.getCellData(4, 0).toUpperCase()).click();
 		HomePage.pesquisaProdutoTela(driver, ExcelUtils.getCellData(4, 1)).click();
 		Assert.assertEquals(ExcelUtils.getCellData(4, 2), HomePage.produtoTelaPrincipalValidoObtido(driver, ExcelUtils.getCellData(4, 1)));
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1000);");
 		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoValidoTelaPrincipal.png");
 	}
 
 	@Test
 	public void pesquisaProdutoQuantidadeInvalidaTelaPrincipal() throws Exception {
-		
 		HomePage.pesquisaCategoriaTelaPrincipal(driver, ExcelUtils.getCellData(2, 0).toUpperCase()).click();
 		HomePage.pesquisaProdutoTela(driver, ExcelUtils.getCellData(2, 1)).click();
 		HomePage.digitaQuantidadeDeProdutos(driver).sendKeys(ExcelUtils.getCellData(7, 0));
 		HomePage.inserirProdutosCarrinho(driver).click();
 		Assert.assertEquals(ExcelUtils.getCellData(7, 1), HomePage.valorInvalidoDeProdutos(driver));
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("scrollBy(0,200)", "");
 		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoQuantidadeInvalidaTelaPrincipal.png");
-
 	}
 
 	@AfterMethod

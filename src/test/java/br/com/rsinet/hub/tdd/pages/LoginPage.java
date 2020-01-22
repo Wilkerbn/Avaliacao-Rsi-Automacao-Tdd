@@ -19,8 +19,6 @@ public class LoginPage {
 	}
 
 	public static WebElement criarNovaConta(WebDriver driver) throws Exception {
-
-
 		elemento = driver.findElement(By.linkText("CREATE NEW ACCOUNT"));
 		return elemento;
 
