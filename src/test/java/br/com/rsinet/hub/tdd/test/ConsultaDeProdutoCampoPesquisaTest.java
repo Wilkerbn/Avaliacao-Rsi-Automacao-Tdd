@@ -1,53 +1,74 @@
 package br.com.rsinet.hub.tdd.test;
 
-import org.openqa.selenium.By;
+import java.io.IOException;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 
 import br.com.rsinet.hub.tdd.pages.HomePage;
 import br.com.rsinet.hub.tdd.suport.Generator;
 import br.com.rsinet.hub.tdd.suport.Screenshot;
 import br.com.rsinet.hub.tdd.suport.Web;
 import br.com.rsinet.hub.tdd.utility.Constant;
-import br.com.rsinet.hub.tdd.utility.ExcelUtils;
+import br.com.rsinet.hub.tdd.utility.Report;
 
-public class ConsultaDeProdutoCampoPesquisaTest {
+public class ConsultaDeProdutoCampoPesquisaTest extends Constant {
 
 	WebDriver driver = null;
+	HomePage homePage;
+	ExtentTest test;
+	public ExtentReports extent;
+	
+	@BeforeTest
+	public void iniciaReport() {
+		extent = Report.setExtent();
+	}
 
 	@BeforeMethod
 	public void iniciaNavegador() throws Exception {
 		driver = Web.createChrome();
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Produtos");
+		homePage = new HomePage(driver);
+		//ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Produtos");
+		Constant.recebeDadosDoExcel("Produtos");
 	}
 
 	@Test
 	public void pesquisaProdutoValidoCampoPesquisa() throws Exception {
-
-		HomePage.clicaLupaParaPesquisarProduto(driver).click();
-		HomePage.pesquisaProdutoLupa(driver).sendKeys(ExcelUtils.getCellData(3, 1));
-		HomePage.selecionaProdutoLupa(driver, ExcelUtils.getCellData(3, 2)).click();
-		Assert.assertEquals(ExcelUtils.getCellData(3, 2), HomePage.produtoLupaValidoObtido(driver));
+		test = Report.setUp("pesquisaProdutoValidoCampoPesquisa");
+		
+		HomePage.clicaLupaParaPesquisarProduto().click();
+		HomePage.pesquisaProdutoLupa().sendKeys(Constant.produtoValido());
+		HomePage.selecionaProdutoLupa(Constant.produtoValido().toUpperCase()).click();
+		Assert.assertEquals(Constant.produtoValido().toUpperCase(), HomePage.produtoLupaValidoObtido());
+		
 		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoValidoCampoPesquisa.png");
 	}
 
 	@Test
 	public void pesquisaProdutoInvalidoCampoPesquisa() throws Exception {
-
-		HomePage.clicaLupaParaPesquisarProduto(driver).click();
-		HomePage.pesquisaProdutoLupa(driver).sendKeys(ExcelUtils.getCellData(11, 0) + Keys.ENTER);
-		Assert.assertEquals(ExcelUtils.getCellData(11, 1), HomePage.produtoLupaInvalidoObtido(driver));
+		test = Report.setUp("pesquisaProdutoInvalidoCampoPesquisa");
+		
+		HomePage.clicaLupaParaPesquisarProduto().click();
+		HomePage.pesquisaProdutoLupa().sendKeys(Constant.produtoInvalido() + Keys.ENTER);
+		Assert.assertEquals(Constant.mensagemEsperadaParaProdutoInvalidoObtido(), HomePage.produtoLupaInvalidoObtido());
+		
 		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoInvalidoCampoPesquisa.png");
 	}
 
 	@AfterMethod
-	public void killDriver() {
+	public void killDriver(ITestResult result) throws IOException {
+		
+		Report.tearDown(result, test);
+		Report.closeReport(extent);
 		driver.quit();
 	}
 

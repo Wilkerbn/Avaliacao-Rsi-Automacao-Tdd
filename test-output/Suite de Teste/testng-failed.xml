@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite de Teste]">
+  <test thread-count="5" name="Automacao utilizando TDD(failed)">
     <classes>
       <class name="br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest">
         <methods>
-          <include name="iniciaReport"/>
-          <include name="cadastro"/>
+          <include name="cadastroDuplicado"/>
           <include name="iniciaNavegador"/>
           <include name="killDriver"/>
         </methods>
       </class> <!-- br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Automacao utilizando TDD(failed) -->
+</suite> <!-- Failed suite [Suite de Teste] -->

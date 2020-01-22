@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "Suite de Teste">
+	<test name = "Automacao utilizando TDD">
+		<classes>
+			<class name = "br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest" />
+			<class name = "br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest" />
+			<class name = "br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest" />
+		</classes>
+	</test> 	
+</suite>

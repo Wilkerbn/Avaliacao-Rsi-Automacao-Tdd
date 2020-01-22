@@ -8,7 +8,7 @@ public class Generator {
 	public static String dataHoraParaArquivo() {
 		
 		Timestamp ts = new Timestamp(System.currentTimeMillis());
-		return new SimpleDateFormat("yyyy-MM-dd-hh_mm").format(ts);
+		return new SimpleDateFormat("yyyy-MM-dd-hh_mm_ss").format(ts);
 		
 	}
 }
