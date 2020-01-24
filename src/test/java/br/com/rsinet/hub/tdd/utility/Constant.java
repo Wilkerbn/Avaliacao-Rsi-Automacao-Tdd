@@ -1,17 +1,17 @@
 package br.com.rsinet.hub.tdd.utility;
 
 public class Constant {
-
+	
+	/* Configuração do caminho e arquivo Excel */
 	public static final String Path_TestData = "C:\\Users\\wilker.nogueira\\eclipse-workspace\\avaliacao-automacao-tdd\\src\\test\\java\\br\\com\\rsinet\\hub\\tdd\\testdata\\";
-
 	public static final String File_TestData = "TestData.xlsx";
 
+	/* Método que recebe o arquivo do Excel e informa qual planilha contém a Massa de Dados */
 	public static void recebeDadosDoExcel(String planilha) throws Exception {
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, planilha);
 	}
 
-	/* ----------------------- Dados extraídos do Excel e utilizados no Cadastro de Usuário -----------------------  */
-	
+	/* Dados extraídos do Excel e utilizados no Cadastro de Usuário */
 	public static String apelido() throws Exception {
 		return ExcelUtils.getCellData(1, 1);
 	}
@@ -64,8 +64,7 @@ public class Constant {
 		return ExcelUtils.getCellData(13,1);
 	}
 	
-	/* ------------- Dados extraídos do Excel e utilizados no Campo de Pesquisa e Tela Principal -------------  */
-    
+	/* Dados extraídos do Excel e utilizados no Campo de Pesquisa e Tela Principal */
 	public static String categoria() throws Exception {
 		return ExcelUtils.getCellData(3, 0);
 	}
@@ -89,6 +88,4 @@ public class Constant {
 	public static String mensagemEsperadaParaQuantidadeDeProdutosInvalidos() throws Exception {
 		return ExcelUtils.getCellData(7, 1);
 	}
-
-
 }

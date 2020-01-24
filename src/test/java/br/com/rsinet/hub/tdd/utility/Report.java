@@ -11,20 +11,18 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest;
+import br.com.rsinet.hub.tdd.suport.Screenshot;
 
 public class Report {
 
 	public static WebDriver driver;
-
 	public static ExtentHtmlReporter htmlReporter;
 	public static ExtentReports extent;
 	public static ExtentTest test;
-
 	
 	public static ExtentReports setExtent() {
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/myReport.html");
 
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/myReport.html");
 		htmlReporter.config().setDocumentTitle("Relatorio de Automacao"); // Titulo do report
 		htmlReporter.config().setReportName("Relatorio Funcional"); // Nome do report
 		htmlReporter.config().setTheme(Theme.DARK); // Seleciona o tema
@@ -32,7 +30,6 @@ public class Report {
 		extent = new ExtentReports();
 
 		extent.attachReporter(htmlReporter);
-
 		extent.setSystemInfo("Hostname", "LocalHost");
 		extent.setSystemInfo("OS", "Windows10");
 		extent.setSystemInfo("Tester Name", "Wilker");
@@ -41,38 +38,32 @@ public class Report {
 		return extent;
 	}
 
-
+	/* Fecha o relatorio */
 	public static void closeReport(ExtentReports extent) {
 		extent.flush();
 	}
 
-	
+	/* Cria o Report */
 	public static ExtentTest setUp(String report) {
 		test = extent.createTest(report);
 		return test;
 	}
 
-	
-	public static void tearDown(ITestResult result, ExtentTest test) throws IOException {
+	/* Verifica se o teste passou, falhou ou pulou e tira screenshot */
+	public static void tearDown(ITestResult result, ExtentTest test, WebDriver driver) throws IOException {
+		String screenshotPath = Screenshot.tirar(driver, result.getName());
 		if (result.getStatus() == ITestResult.FAILURE) {
-			test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getName()); // Para adicionar no extent report
-			test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getThrowable()); // Para adicionar erro ou exception
-
-//			String screenshotPath = CadastroDeUsuarioTest.getScreenshot(driver, result.getName());
-//			test.addScreenCaptureFromPath(screenshotPath); // Adiciona a screenshot
-			
-			
+			test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getName()); 
+			test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getThrowable()); 
+			test.addScreenCaptureFromPath(screenshotPath); 
 
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			test.log(Status.SKIP, "Test Case SKIPPED IS " + result.getName());
+			test.addScreenCaptureFromPath(screenshotPath); 
 
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			test.log(Status.PASS, "Test Case PASSED IS " + result.getName());
-			
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
-		
-		
-
 	}
-
 }

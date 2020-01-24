@@ -14,8 +14,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 import br.com.rsinet.hub.tdd.pages.HomePage;
-import br.com.rsinet.hub.tdd.suport.Generator;
-import br.com.rsinet.hub.tdd.suport.Screenshot;
 import br.com.rsinet.hub.tdd.suport.Web;
 import br.com.rsinet.hub.tdd.utility.Constant;
 import br.com.rsinet.hub.tdd.utility.Report;
@@ -36,7 +34,6 @@ public class ConsultaDeProdutoTelaPrincipalTest extends Constant{
 	public void iniciaNavegador() throws Exception {
 		driver = Web.createChrome();
 		homepage = new HomePage(driver);
-		//ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Produtos");
 		Constant.recebeDadosDoExcel("Produtos");
 	}
 
@@ -48,12 +45,11 @@ public class ConsultaDeProdutoTelaPrincipalTest extends Constant{
 		HomePage.pesquisaProdutoTela(Constant.produtoValido()).click();
 		Assert.assertEquals(Constant.produtoValido().toUpperCase(), HomePage.produtoTelaPrincipalValidoObtido(Constant.produtoValido().toUpperCase()));
 		
-		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoValidoTelaPrincipal.png");
 	}
 
 	@Test
 	public void pesquisaProdutoQuantidadeInvalidaTelaPrincipal() throws Exception {
-		test = Report.setUp("cadastroDuplicado");
+		test = Report.setUp("pesquisaProdutoQuantidadeInvalidaTelaPrincipal");
 		
 		HomePage.pesquisaCategoriaTelaPrincipal(Constant.categoria().toUpperCase()).click();
 		HomePage.pesquisaProdutoTela(Constant.produtoValido()).click();
@@ -61,15 +57,14 @@ public class ConsultaDeProdutoTelaPrincipalTest extends Constant{
 		HomePage.inserirProdutosCarrinho().click();
 		Assert.assertEquals(Constant.mensagemEsperadaParaQuantidadeDeProdutosInvalidos(), HomePage.valorInvalidoDeProdutos());
 		
-		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoQuantidadeInvalidaTelaPrincipal.png");
 	}
 
 	@AfterMethod
 	public void killDriver(ITestResult result) throws IOException {
 		
-		Report.tearDown(result, test);
+		Report.tearDown(result, test, driver);
 		Report.closeReport(extent);
-		driver.quit();
+		Web.killDriver(driver);
 	}
 
 }

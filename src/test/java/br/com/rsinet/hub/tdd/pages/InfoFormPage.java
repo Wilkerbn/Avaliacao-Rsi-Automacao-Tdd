@@ -19,6 +19,7 @@ public class InfoFormPage extends Wait {
 		InfoFormPage.driver = driver;
 	}
 
+	/* Métodos utilizados para capturar elementos da página de formulário para criação da conta */
 	public static WebElement campoApelido() {
 		elemento = driver.findElement(By.name("usernameRegisterPage"));
 		return elemento;

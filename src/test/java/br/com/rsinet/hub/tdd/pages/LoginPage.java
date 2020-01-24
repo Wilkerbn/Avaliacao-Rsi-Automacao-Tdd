@@ -9,6 +9,7 @@ public class LoginPage {
 	private static WebDriver driver;
 	private static WebElement elemento = null;
 
+	/* Métodos utilizados para capturar elementos na página de login */
 	public LoginPage(WebDriver driver) {
 		LoginPage.driver = driver;
 	}

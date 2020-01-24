@@ -16,6 +16,7 @@ public class HomePage extends Wait {
 		HomePage.driver = driver;
 	}
 
+	/* Métodos utilizados para capturar elementos da Home Page */
 	public static WebElement pesquisaCategoriaTelaPrincipal(String categoria) {
 		elemento = driver.findElement(By.xpath("//*[. ='" + categoria + "']"));
 		return elemento;

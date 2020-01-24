@@ -15,8 +15,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 import br.com.rsinet.hub.tdd.pages.HomePage;
-import br.com.rsinet.hub.tdd.suport.Generator;
-import br.com.rsinet.hub.tdd.suport.Screenshot;
 import br.com.rsinet.hub.tdd.suport.Web;
 import br.com.rsinet.hub.tdd.utility.Constant;
 import br.com.rsinet.hub.tdd.utility.Report;
@@ -37,7 +35,6 @@ public class ConsultaDeProdutoCampoPesquisaTest extends Constant {
 	public void iniciaNavegador() throws Exception {
 		driver = Web.createChrome();
 		homePage = new HomePage(driver);
-		//ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Produtos");
 		Constant.recebeDadosDoExcel("Produtos");
 	}
 
@@ -50,7 +47,6 @@ public class ConsultaDeProdutoCampoPesquisaTest extends Constant {
 		HomePage.selecionaProdutoLupa(Constant.produtoValido().toUpperCase()).click();
 		Assert.assertEquals(Constant.produtoValido().toUpperCase(), HomePage.produtoLupaValidoObtido());
 		
-		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoValidoCampoPesquisa.png");
 	}
 
 	@Test
@@ -61,15 +57,14 @@ public class ConsultaDeProdutoCampoPesquisaTest extends Constant {
 		HomePage.pesquisaProdutoLupa().sendKeys(Constant.produtoInvalido() + Keys.ENTER);
 		Assert.assertEquals(Constant.mensagemEsperadaParaProdutoInvalidoObtido(), HomePage.produtoLupaInvalidoObtido());
 		
-		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " pesquisaProdutoInvalidoCampoPesquisa.png");
 	}
 
 	@AfterMethod
 	public void killDriver(ITestResult result) throws IOException {
 		
-		Report.tearDown(result, test);
+		Report.tearDown(result, test, driver);
 		Report.closeReport(extent);
-		driver.quit();
+		Web.killDriver(driver);
 	}
 
 }

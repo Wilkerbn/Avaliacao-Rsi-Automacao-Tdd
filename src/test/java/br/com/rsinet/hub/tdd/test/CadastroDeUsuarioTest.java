@@ -17,8 +17,6 @@ import com.aventstack.extentreports.ExtentTest;
 
 import br.com.rsinet.hub.tdd.pages.InfoFormPage;
 import br.com.rsinet.hub.tdd.pages.LoginPage;
-import br.com.rsinet.hub.tdd.suport.Generator;
-import br.com.rsinet.hub.tdd.suport.Screenshot;
 import br.com.rsinet.hub.tdd.suport.Web;
 import br.com.rsinet.hub.tdd.utility.Constant;
 import br.com.rsinet.hub.tdd.utility.Report;
@@ -41,9 +39,7 @@ public class CadastroDeUsuarioTest extends Constant{
 		driver = Web.createChrome();
 		infoFormPage = new InfoFormPage(driver);
 		loginPage = new LoginPage(driver);
-		//ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Cadastro");
 		Constant.recebeDadosDoExcel("Cadastro");
-		
 	}
 
 	@Test 
@@ -68,7 +64,6 @@ public class CadastroDeUsuarioTest extends Constant{
 		InfoFormPage.botaoRegistra().click();
 		assertEquals(Constant.apelido(), InfoFormPage.capturaTexto());
 		
-		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " cadastroValido.png");
 	}
 
 	@Test
@@ -93,15 +88,14 @@ public class CadastroDeUsuarioTest extends Constant{
 		InfoFormPage.botaoRegistra().click();
 		assertEquals(Constant.usuarioJaExistente(), InfoFormPage.capturaTextoCadastroDuplicado());
 		
-		Screenshot.tirar(driver, "target/screenshot/" + Generator.dataHoraParaArquivo() + " cadastroDuplicado.png");
 	}
 	
 	@AfterMethod
 	public void killDriver(ITestResult result) throws IOException {
 		
-		Report.tearDown(result, test);
+		Report.tearDown(result, test, driver);
 		Report.closeReport(extent);
-		driver.quit();
+		Web.killDriver(driver);
 	}
 
 }
