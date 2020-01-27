@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest">
+      <class name="br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest">
         <methods>
-          <include name="iniciaReport"/>
-          <include name="cadastro"/>
-          <include name="cadastroDuplicado"/>
-          <include name="iniciaNavegador"/>
+          <include name="pesquisaProdutoValidoTelaPrincipal"/>
           <include name="killDriver"/>
+          <include name="iniciaNavegador"/>
+          <include name="iniciaReport"/>
         </methods>
-      </class> <!-- br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest -->
+      </class> <!-- br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import br.com.rsinet.hub.tdd.suport.Wait;
+import br.com.rsinet.hub.tdd.utility.Constant;
 
 public class InfoFormPage extends Wait {
 
@@ -104,6 +105,23 @@ public class InfoFormPage extends Wait {
 		WebElement textoCapturado = driver.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]"));
 		String mensagemCadastroDuplicado = textoCapturado.getText();
 		return mensagemCadastroDuplicado;
+	}
+	
+	public static void efetuaCadastro() throws Exception {
+		campoApelido().sendKeys(Constant.apelido());
+		campoSenha().sendKeys(Constant.confirmaSenha());
+		campoConfirmaSenha().sendKeys(Constant.confirmaSenha());
+		campoEmail().sendKeys(Constant.email());
+		campoPrimeiroNome().sendKeys(Constant.primeiroNome());
+		campoUltimoNome().sendKeys(Constant.ultimoNome());
+		campoTelefone().sendKeys(Constant.telefone());
+		campoPais().selectByVisibleText(Constant.pais());
+		campoCidade().sendKeys(Constant.cidade());
+		campoEndereco().sendKeys(Constant.endereco());
+		campoEstado().sendKeys(Constant.estado());
+		campoCep().sendKeys(Constant.cep());
+		campoAceitaTermos().click();
+		botaoRegistra().click();
 	}
 	
 }

@@ -1,6 +1,7 @@
 package br.com.rsinet.hub.tdd.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -19,9 +20,14 @@ public class LoginPage {
 		return elemento;
 	}
 
-	public static WebElement criarNovaConta() throws Exception {
+	public static WebElement criarNovaConta() {
 		elemento = driver.findElement(By.linkText("CREATE NEW ACCOUNT"));
 		return elemento;
 
+	}
+	
+	public static void acessaCriarConta() {
+		botaoUsuario().click();;
+		criarNovaConta().sendKeys(Keys.ENTER);;
 	}
 }

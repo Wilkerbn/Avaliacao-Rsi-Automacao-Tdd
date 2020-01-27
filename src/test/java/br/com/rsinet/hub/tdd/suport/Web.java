@@ -9,7 +9,7 @@ public class Web {
 
 	/* Método que recebe as configurações do Driver e informa qual a aplicação a ser executada */
 	public static WebDriver createChrome() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\wilker.nogueira\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./target/chrome-driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://advantageonlineshopping.com/#/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

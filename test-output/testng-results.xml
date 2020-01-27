@@ -2,47 +2,47 @@
 <testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite de Teste" duration-ms="87706" started-at="2020-01-24T16:03:35 BRT" finished-at="2020-01-24T16:05:03 BRT">
+  <suite name="Suite de Teste" duration-ms="86769" started-at="2020-01-27T13:52:48 BRT" finished-at="2020-01-27T13:54:15 BRT">
     <groups>
     </groups>
-    <test name="Automacao utilizando TDD" duration-ms="87706" started-at="2020-01-24T16:03:35 BRT" finished-at="2020-01-24T16:05:03 BRT">
+    <test name="Automacao utilizando TDD" duration-ms="86769" started-at="2020-01-27T13:52:48 BRT" finished-at="2020-01-27T13:54:15 BRT">
       <class name="br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest">
-        <test-method status="PASS" signature="iniciaReport()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84]" name="iniciaReport" is-config="true" duration-ms="1" started-at="2020-01-24T16:03:35 BRT" finished-at="2020-01-24T16:03:35 BRT">
+        <test-method status="PASS" signature="iniciaReport()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49]" name="iniciaReport" is-config="true" duration-ms="1" started-at="2020-01-27T13:52:48 BRT" finished-at="2020-01-27T13:52:48 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaReport -->
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84]" name="iniciaNavegador" is-config="true" duration-ms="8021" started-at="2020-01-24T16:04:38 BRT" finished-at="2020-01-24T16:04:46 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49]" name="iniciaNavegador" is-config="true" duration-ms="9981" started-at="2020-01-27T13:53:49 BRT" finished-at="2020-01-27T13:53:59 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="pesquisaProdutoQuantidadeInvalidaTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84]" name="pesquisaProdutoQuantidadeInvalidaTelaPrincipal" duration-ms="3036" started-at="2020-01-24T16:04:46 BRT" finished-at="2020-01-24T16:04:49 BRT">
+        <test-method status="PASS" signature="pesquisaProdutoQuantidadeInvalidaTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49]" name="pesquisaProdutoQuantidadeInvalidaTelaPrincipal" duration-ms="1604" started-at="2020-01-27T13:53:59 BRT" finished-at="2020-01-27T13:54:01 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pesquisaProdutoQuantidadeInvalidaTelaPrincipal -->
-        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84]" name="killDriver" is-config="true" duration-ms="1206" started-at="2020-01-24T16:04:49 BRT" finished-at="2020-01-24T16:04:50 BRT">
+        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49]" name="killDriver" is-config="true" duration-ms="1181" started-at="2020-01-27T13:54:01 BRT" finished-at="2020-01-27T13:54:02 BRT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=pesquisaProdutoQuantidadeInvalidaTelaPrincipal status=SUCCESS method=ConsultaDeProdutoTelaPrincipalTest.pesquisaProdutoQuantidadeInvalidaTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84] output={null}]]]>
+                <![CDATA[[TestResult name=pesquisaProdutoQuantidadeInvalidaTelaPrincipal status=SUCCESS method=ConsultaDeProdutoTelaPrincipalTest.pesquisaProdutoQuantidadeInvalidaTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killDriver -->
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84]" name="iniciaNavegador" is-config="true" duration-ms="10011" started-at="2020-01-24T16:04:50 BRT" finished-at="2020-01-24T16:05:00 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49]" name="iniciaNavegador" is-config="true" duration-ms="9974" started-at="2020-01-27T13:54:02 BRT" finished-at="2020-01-27T13:54:12 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="pesquisaProdutoValidoTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84]" name="pesquisaProdutoValidoTelaPrincipal" duration-ms="1470" started-at="2020-01-24T16:05:00 BRT" finished-at="2020-01-24T16:05:02 BRT">
+        <test-method status="PASS" signature="pesquisaProdutoValidoTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49]" name="pesquisaProdutoValidoTelaPrincipal" duration-ms="1394" started-at="2020-01-27T13:54:12 BRT" finished-at="2020-01-27T13:54:14 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pesquisaProdutoValidoTelaPrincipal -->
-        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84]" name="killDriver" is-config="true" duration-ms="1003" started-at="2020-01-24T16:05:02 BRT" finished-at="2020-01-24T16:05:03 BRT">
+        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49]" name="killDriver" is-config="true" duration-ms="1004" started-at="2020-01-27T13:54:14 BRT" finished-at="2020-01-27T13:54:15 BRT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=pesquisaProdutoValidoTelaPrincipal status=SUCCESS method=ConsultaDeProdutoTelaPrincipalTest.pesquisaProdutoValidoTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@67205a84] output={null}]]]>
+                <![CDATA[[TestResult name=pesquisaProdutoValidoTelaPrincipal status=SUCCESS method=ConsultaDeProdutoTelaPrincipalTest.pesquisaProdutoValidoTelaPrincipal()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest@614ddd49] output={null}]]]>
               </value>
             </param>
           </params>
@@ -51,42 +51,42 @@
         </test-method> <!-- killDriver -->
       </class> <!-- br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest -->
       <class name="br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest">
-        <test-method status="PASS" signature="iniciaReport()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d]" name="iniciaReport" is-config="true" duration-ms="113" started-at="2020-01-24T16:03:35 BRT" finished-at="2020-01-24T16:03:35 BRT">
+        <test-method status="PASS" signature="iniciaReport()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014]" name="iniciaReport" is-config="true" duration-ms="98" started-at="2020-01-27T13:52:48 BRT" finished-at="2020-01-27T13:52:48 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaReport -->
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d]" name="iniciaNavegador" is-config="true" duration-ms="12116" started-at="2020-01-24T16:03:35 BRT" finished-at="2020-01-24T16:03:47 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014]" name="iniciaNavegador" is-config="true" duration-ms="11406" started-at="2020-01-27T13:52:48 BRT" finished-at="2020-01-27T13:52:59 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="cadastro()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d]" name="cadastro" duration-ms="5600" started-at="2020-01-24T16:03:47 BRT" finished-at="2020-01-24T16:03:53 BRT">
+        <test-method status="PASS" signature="cadastro()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014]" name="cadastro" duration-ms="5843" started-at="2020-01-27T13:52:59 BRT" finished-at="2020-01-27T13:53:05 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cadastro -->
-        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d]" name="killDriver" is-config="true" duration-ms="1235" started-at="2020-01-24T16:03:53 BRT" finished-at="2020-01-24T16:03:54 BRT">
+        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014]" name="killDriver" is-config="true" duration-ms="1270" started-at="2020-01-27T13:53:05 BRT" finished-at="2020-01-27T13:53:07 BRT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=cadastro status=SUCCESS method=CadastroDeUsuarioTest.cadastro()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d] output={null}]]]>
+                <![CDATA[[TestResult name=cadastro status=SUCCESS method=CadastroDeUsuarioTest.cadastro()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killDriver -->
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d]" name="iniciaNavegador" is-config="true" duration-ms="10020" started-at="2020-01-24T16:03:54 BRT" finished-at="2020-01-24T16:04:04 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014]" name="iniciaNavegador" is-config="true" duration-ms="9937" started-at="2020-01-27T13:53:07 BRT" finished-at="2020-01-27T13:53:16 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="cadastroDuplicado()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d]" name="cadastroDuplicado" duration-ms="5664" started-at="2020-01-24T16:04:04 BRT" finished-at="2020-01-24T16:04:10 BRT">
+        <test-method status="PASS" signature="cadastroDuplicado()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014]" name="cadastroDuplicado" duration-ms="5797" started-at="2020-01-27T13:53:16 BRT" finished-at="2020-01-27T13:53:22 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cadastroDuplicado -->
-        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d]" name="killDriver" is-config="true" duration-ms="913" started-at="2020-01-24T16:04:10 BRT" finished-at="2020-01-24T16:04:11 BRT">
+        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014]" name="killDriver" is-config="true" duration-ms="917" started-at="2020-01-27T13:53:22 BRT" finished-at="2020-01-27T13:53:23 BRT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=cadastroDuplicado status=SUCCESS method=CadastroDeUsuarioTest.cadastroDuplicado()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@6c49835d] output={null}]]]>
+                <![CDATA[[TestResult name=cadastroDuplicado status=SUCCESS method=CadastroDeUsuarioTest.cadastroDuplicado()[pri:0, instance:br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest@1e6d1014] output={null}]]]>
               </value>
             </param>
           </params>
@@ -95,42 +95,42 @@
         </test-method> <!-- killDriver -->
       </class> <!-- br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest -->
       <class name="br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest">
-        <test-method status="PASS" signature="iniciaReport()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265]" name="iniciaReport" is-config="true" duration-ms="1" started-at="2020-01-24T16:03:35 BRT" finished-at="2020-01-24T16:03:35 BRT">
+        <test-method status="PASS" signature="iniciaReport()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36]" name="iniciaReport" is-config="true" duration-ms="1" started-at="2020-01-27T13:52:48 BRT" finished-at="2020-01-27T13:52:48 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaReport -->
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265]" name="iniciaNavegador" is-config="true" duration-ms="10067" started-at="2020-01-24T16:04:11 BRT" finished-at="2020-01-24T16:04:21 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36]" name="iniciaNavegador" is-config="true" duration-ms="10011" started-at="2020-01-27T13:53:23 BRT" finished-at="2020-01-27T13:53:33 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="pesquisaProdutoInvalidoCampoPesquisa()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265]" name="pesquisaProdutoInvalidoCampoPesquisa" duration-ms="2553" started-at="2020-01-24T16:04:21 BRT" finished-at="2020-01-24T16:04:23 BRT">
+        <test-method status="PASS" signature="pesquisaProdutoInvalidoCampoPesquisa()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36]" name="pesquisaProdutoInvalidoCampoPesquisa" duration-ms="2458" started-at="2020-01-27T13:53:33 BRT" finished-at="2020-01-27T13:53:36 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pesquisaProdutoInvalidoCampoPesquisa -->
-        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265]" name="killDriver" is-config="true" duration-ms="923" started-at="2020-01-24T16:04:23 BRT" finished-at="2020-01-24T16:04:24 BRT">
+        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36]" name="killDriver" is-config="true" duration-ms="919" started-at="2020-01-27T13:53:36 BRT" finished-at="2020-01-27T13:53:37 BRT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=pesquisaProdutoInvalidoCampoPesquisa status=SUCCESS method=ConsultaDeProdutoCampoPesquisaTest.pesquisaProdutoInvalidoCampoPesquisa()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265] output={null}]]]>
+                <![CDATA[[TestResult name=pesquisaProdutoInvalidoCampoPesquisa status=SUCCESS method=ConsultaDeProdutoCampoPesquisaTest.pesquisaProdutoInvalidoCampoPesquisa()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killDriver -->
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265]" name="iniciaNavegador" is-config="true" duration-ms="9989" started-at="2020-01-24T16:04:24 BRT" finished-at="2020-01-24T16:04:34 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36]" name="iniciaNavegador" is-config="true" duration-ms="9984" started-at="2020-01-27T13:53:37 BRT" finished-at="2020-01-27T13:53:47 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="pesquisaProdutoValidoCampoPesquisa()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265]" name="pesquisaProdutoValidoCampoPesquisa" duration-ms="2763" started-at="2020-01-24T16:04:34 BRT" finished-at="2020-01-24T16:04:37 BRT">
+        <test-method status="PASS" signature="pesquisaProdutoValidoCampoPesquisa()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36]" name="pesquisaProdutoValidoCampoPesquisa" duration-ms="1838" started-at="2020-01-27T13:53:47 BRT" finished-at="2020-01-27T13:53:48 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pesquisaProdutoValidoCampoPesquisa -->
-        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265]" name="killDriver" is-config="true" duration-ms="963" started-at="2020-01-24T16:04:37 BRT" finished-at="2020-01-24T16:04:38 BRT">
+        <test-method status="PASS" signature="killDriver(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36]" name="killDriver" is-config="true" duration-ms="1109" started-at="2020-01-27T13:53:48 BRT" finished-at="2020-01-27T13:53:49 BRT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=pesquisaProdutoValidoCampoPesquisa status=SUCCESS method=ConsultaDeProdutoCampoPesquisaTest.pesquisaProdutoValidoCampoPesquisa()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@5e853265] output={null}]]]>
+                <![CDATA[[TestResult name=pesquisaProdutoValidoCampoPesquisa status=SUCCESS method=ConsultaDeProdutoCampoPesquisaTest.pesquisaProdutoValidoCampoPesquisa()[pri:0, instance:br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest@76707e36] output={null}]]]>
               </value>
             </param>
           </params>

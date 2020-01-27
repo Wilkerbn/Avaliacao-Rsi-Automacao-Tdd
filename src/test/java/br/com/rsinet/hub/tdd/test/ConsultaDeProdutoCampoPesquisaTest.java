@@ -2,7 +2,6 @@ package br.com.rsinet.hub.tdd.test;
 
 import java.io.IOException;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -41,27 +40,19 @@ public class ConsultaDeProdutoCampoPesquisaTest extends Constant {
 	@Test
 	public void pesquisaProdutoValidoCampoPesquisa() throws Exception {
 		test = Report.setUp("pesquisaProdutoValidoCampoPesquisa");
-		
-		HomePage.clicaLupaParaPesquisarProduto().click();
-		HomePage.pesquisaProdutoLupa().sendKeys(Constant.produtoValido());
-		HomePage.selecionaProdutoLupa(Constant.produtoValido().toUpperCase()).click();
+		HomePage.consultaProdutoValidoCampoPesquisa();
 		Assert.assertEquals(Constant.produtoValido().toUpperCase(), HomePage.produtoLupaValidoObtido());
-		
 	}
 
 	@Test
 	public void pesquisaProdutoInvalidoCampoPesquisa() throws Exception {
 		test = Report.setUp("pesquisaProdutoInvalidoCampoPesquisa");
-		
-		HomePage.clicaLupaParaPesquisarProduto().click();
-		HomePage.pesquisaProdutoLupa().sendKeys(Constant.produtoInvalido() + Keys.ENTER);
+		HomePage.consultaProdutoInvalidoCampoPesquisa();
 		Assert.assertEquals(Constant.mensagemEsperadaParaProdutoInvalidoObtido(), HomePage.produtoLupaInvalidoObtido());
-		
 	}
 
 	@AfterMethod
 	public void killDriver(ITestResult result) throws IOException {
-		
 		Report.tearDown(result, test, driver);
 		Report.closeReport(extent);
 		Web.killDriver(driver);

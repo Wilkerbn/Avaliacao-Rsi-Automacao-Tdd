@@ -1,10 +1,13 @@
 package br.com.rsinet.hub.tdd.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import br.com.rsinet.hub.tdd.suport.Wait;
+import br.com.rsinet.hub.tdd.utility.Constant;
+import br.com.rsinet.hub.tdd.utility.JsonUtils;
 
 public class HomePage extends Wait {
 
@@ -24,6 +27,7 @@ public class HomePage extends Wait {
 
 	public static WebElement pesquisaProdutoTela(String produto) {
 		esperarCarregarPagina(driver);
+		//esperaElementoSerClicavel(driver, produto);
 		elemento = driver.findElement(By.xpath("//*[. ='" + produto + "']"));
 		return elemento;
 	}
@@ -35,6 +39,7 @@ public class HomePage extends Wait {
 
 	public static WebElement pesquisaProdutoLupa() {
 		esperarCarregarPagina(driver);
+		//esperaElementoSerClicavel(driver, produto);
 		elemento = driver.findElement(By.id("autoComplete"));
 		return elemento;
 	}
@@ -45,7 +50,7 @@ public class HomePage extends Wait {
 	}
 	
 	public static String produtoLupaValidoObtido() {
-		esperarCarregarPagina(driver);
+		//esperarCarregarPagina(driver);
 		WebElement elemento = driver.findElement(By.xpath("//*[@id=\"Description\"]/h1"));
 		String produtoObtido = elemento.getText();
 		return produtoObtido;
@@ -79,6 +84,29 @@ public class HomePage extends Wait {
 		elemento = driver.findElement(By.xpath("//*[@id=\"productProperties\"]/label"));
 		String quantidadeInvalidaProduto = elemento.getText();
 		return quantidadeInvalidaProduto;
+	}
+	
+	public static void consultaProdutoValidoCampoPesquisa() throws Exception {
+		clicaLupaParaPesquisarProduto().click();
+		pesquisaProdutoLupa().sendKeys(Constant.produtoValido());
+		selecionaProdutoLupa(Constant.produtoValido().toUpperCase()).click();
+	}
+	
+	public static void consultaProdutoInvalidoCampoPesquisa() throws Exception {
+		clicaLupaParaPesquisarProduto().click();
+		pesquisaProdutoLupa().sendKeys(Constant.produtoInvalido() + Keys.ENTER);
+	}
+	
+	public static void consultaProdutoValidoTelaPrincipal() throws Exception {
+		pesquisaCategoriaTelaPrincipal(Constant.categoria().toUpperCase()).click();
+		pesquisaProdutoTela(Constant.produtoValido()).click();
+	}
+	
+	public static void consultaProdutoComQuantidadeInvalidaTelaPrincipal() throws Exception {
+		pesquisaCategoriaTelaPrincipal(Constant.categoria().toUpperCase()).click();
+		pesquisaProdutoTela(Constant.produtoValido()).click();
+		digitaQuantidadeDeProdutos().sendKeys(Constant.quantidadeDeProdutosDoCarrinho());
+		inserirProdutosCarrinho().click();
 	}
 
 }
