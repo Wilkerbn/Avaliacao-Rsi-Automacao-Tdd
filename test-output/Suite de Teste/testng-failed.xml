@@ -3,14 +3,33 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite de Teste]">
   <test thread-count="5" name="Automacao utilizando TDD(failed)">
     <classes>
+      <class name="br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest">
+        <methods>
+          <include name="iniciaReport"/>
+          <include name="cadastro"/>
+          <include name="cadastroDuplicado"/>
+          <include name="iniciaNavegador"/>
+          <include name="killDriver"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub.tdd.test.CadastroDeUsuarioTest -->
       <class name="br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest">
         <methods>
           <include name="pesquisaProdutoValidoTelaPrincipal"/>
           <include name="killDriver"/>
           <include name="iniciaNavegador"/>
+          <include name="pesquisaProdutoQuantidadeInvalidaTelaPrincipal"/>
           <include name="iniciaReport"/>
         </methods>
       </class> <!-- br.com.rsinet.hub.tdd.test.ConsultaDeProdutoTelaPrincipalTest -->
+      <class name="br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest">
+        <methods>
+          <include name="iniciaNavegador"/>
+          <include name="iniciaReport"/>
+          <include name="killDriver"/>
+          <include name="pesquisaProdutoValidoCampoPesquisa"/>
+          <include name="pesquisaProdutoInvalidoCampoPesquisa"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub.tdd.test.ConsultaDeProdutoCampoPesquisaTest -->
     </classes>
   </test> <!-- Automacao utilizando TDD(failed) -->
 </suite> <!-- Failed suite [Suite de Teste] -->
